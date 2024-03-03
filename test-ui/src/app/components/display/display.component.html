@@ -1,0 +1,59 @@
+<div class="container">
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Display Screen</h3>
+  </div>
+</div>
+  <form>
+    <p>{{ someString }}</p>
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <input class="form-control border-1" style="font-size: large; font-style: normal; font-family: 'Helvetica'"
+                   type="text"
+                   [value]="enteredValue" id="someString" (keyup)="setData($event)">
+            <h3 style="font-size: large; font-style: normal; font-family: 'Helvetica'">{{ enteredValue }}</h3>
+          </div>
+
+          <div class="col">
+            <input class="form-control" style="font-size: large; font-style: normal; font-family: 'Helvetica'"
+                   type="text" #box id="some" (keyup.enter)="onEnter(box.value)">
+            {{ boxValue }}
+          </div>
+          <div class="col-4">
+            <select class="form-select form-select-lg" (change)="onChange($event)">
+              <option disabled selected>Select car</option>
+              @for (car of cars;track car.id) {
+                <option class="form-select-lg" value="{{car.name}}">
+                  {{ car.id }}-{{ car.name }}
+                </option>
+              }
+            </select>
+            {{ selectedCar }}
+          </div>
+
+          <div class="mt-4">
+            <section class="mb-3">{{ range }}</section>
+            <input class="form-control" #rangeVal type="range" id="rangeInput" min="0" max="100"
+                   (change)="onRangeChange(rangeVal.value)">
+          </div>
+          <div class="col-12 form-switch mt-2 ms-2">
+            <input class="form-check-input"
+                   type="checkbox" role="switch" id="slider1" checked>
+            <label class="form-check-label ms-2" for="slider1">switch checkbox</label>
+          </div>
+
+          <div class="mt-2">
+          <textarea style="font-size: large; font-style: normal; font-family: 'Helvetica'"
+                    placeholder="Helvetica" class="form-control" rows="5"></textarea>
+          </div>
+
+          <div class="mt-4">
+            <input class="form-control mt-2" [value]="oneWayValue" id="oneWayValue" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

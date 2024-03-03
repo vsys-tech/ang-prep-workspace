@@ -1,0 +1,70 @@
+<div class="container-sm mt-2">
+  <div class="card">
+    <form class="ms-2 " (ngSubmit)="onSubmit()" #form="ngForm">
+      <div class="row-4 form-group mt-4">
+        <div class="col-8 mt-2">
+          <input class="form-control"
+                 type="text"
+                 id="todoName"
+                 placeholder="give name to todo"
+                 [(ngModel)]="model.todoName"
+                 name="todoName"
+                 required>
+        </div>
+        <div class="col-8 mt-2">
+          <input class="form-control"
+                 type="text"
+                 id="description"
+                 placeholder="description"
+                 [(ngModel)]="model.description"
+                 name="description"
+                 required>
+        </div>
+        <div class="col-4 mt-2">
+          <input class="form-control"
+                 type="date"
+                 id="created"
+                 [(ngModel)]="model.created"
+                 ngModel
+                 name="created"
+                 required>
+        </div>
+        <div class="col-4 mt-2">
+          <input class="form-control"
+                 type="text"
+                 id="assignedTo"
+                 placeholder="assignedTo"
+                 [(ngModel)]="model.assignedTo"
+                 name="assignedTo"
+                 required>
+        </div>
+        <div class="col-4 mt-2">
+          <input class="form-control"
+                 type="date"
+                 id="completedBy"
+                 [(ngModel)]="model.completedBy"
+                 ngModel
+                 name="completedBy"
+                 required>
+        </div>
+        <div class="col-4 mt-2">
+          <input class="form-control"
+                 type="text"
+                 id="status"
+                 placeholder="status"
+                 [(ngModel)]="model.status"
+                 name="status"
+                 required>
+        </div>
+      </div>
+      <div class="row form-group mt-4 mb-2">
+        <div class="col-2 ">
+          <button class="btn btn-outline-success" type="submit">Submit</button>
+        </div>
+        <div class="col-2 ms-2">
+          <button class="btn btn-outline-info" type="reset">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
